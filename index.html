@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-eval' https://esm.sh; style-src 'self' 'unsafe-inline';">
   <title>Symbiont Dashboard - Nigeria AgriTech</title>
   <style>
     :root {
@@ -46,13 +47,15 @@
     .metric { background: rgba(0,128,0,0.1); padding: 15px; border-radius: 8px; }
     .suggestion { font-style: italic; color: #d2691e; }
     .toggle { position: absolute; top: 10px; right: 10px; }
+    .toast { position: fixed; top: 20px; right: 20px; padding: 10px; background: #ff6b6b; color: white; border-radius: 4px; z-index: 1000; }
   </style>
   <script type="importmap">
   {
     "imports": {
       "react": "https://esm.sh/react@18.2.0?dev",
       "react-dom/client": "https://esm.sh/react-dom@18.2.0/client?dev",
-      "react/jsx-runtime": "https://esm.sh/react@18.2.0/jsx-runtime"
+      "react/jsx-runtime": "https://esm.sh/react@18.2.0/jsx-runtime",
+      "react-hot-toast": "https://esm.sh/react-hot-toast@2.4.1?dev"
     }
   }
   </script>
