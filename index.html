@@ -1,1 +1,72 @@
-feat: initial dashboard HTML, ESM import, and styles
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Symbiont Dashboard - Nigeria AgriTech</title>
+  <style>
+    :root {
+      --primary-green: #008000;
+      --dark-bg: #1a1a1a;
+      --light-bg: #f0f8ff;
+      --text-dark: #333;
+      --text-light: #ddd;
+    }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Ubuntu', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      background-color: var(--light-bg);
+      color: var(--text-dark);
+      padding: 20px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    body.dark { background-color: var(--dark-bg); color: var(--text-light); }
+    #app {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .dashboard { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 20px 0; }
+    @media (max-width: 600px) { .dashboard { grid-template-columns: 1fr; } }
+    button {
+      background: var(--primary-green);
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background 0.2s;
+      margin: 5px;
+    }
+    button:hover { background: #006400; }
+    button:disabled { opacity: 0.6; cursor: not-allowed; }
+    .metric { background: rgba(0,128,0,0.1); padding: 15px; border-radius: 8px; }
+    .suggestion { font-style: italic; color: #d2691e; }
+    .toggle { position: absolute; top: 10px; right: 10px; }
+  </style>
+  <script type="importmap">
+  {
+    "imports": {
+      "react": "https://esm.sh/react@18.2.0?dev",
+      "react-dom/client": "https://esm.sh/react-dom@18.2.0/client?dev",
+      "react/jsx-runtime": "https://esm.sh/react@18.2.0/jsx-runtime"
+    }
+  }
+  </script>
+</head>
+<body>
+  <noscript>
+    <div id="app" style="text-align: center; padding: 20px;">
+      <h1>JavaScript Disabled</h1>
+      <p>Enable JS for Symbiont's neural magic! 🇳🇬</p>
+    </div>
+  </noscript>
+  <div id="app" role="main" aria-label="Symbiont AgriTech Dashboard">
+    <h1>Loading Symbiont...</h1>
+  </div>
+  <script type="module" src="./src/index.tsx"></script>
+</body>
+</html>
